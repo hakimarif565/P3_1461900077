@@ -26,11 +26,12 @@
         <tbody>
         @foreach($transaksi as $transaksi)
           <tr class="w-full font-light text-gray-700 whitespace-no-wrap border">
+            
             <td class="px-4 py-4">{{ $transaksi->id }}</td>
             <td class="px-4 py-4">{{ $transaksi->id_pelanggan }}</td>
             <td class="px-4 py-4">{{ $transaksi->id_barang }}</td>
             <td class="text-center py-4">
-              <a href="#"><span class="fill-current text-green-500 material-icons">Edit</span></a> !
+              <a href="{{ url('transaksi/', . $transaksi->id . '/edit')">Edit</a> !
               <a href="#"><span class="fill-current text-red-500 material-icons">Hapus</span></a>
             </td>
           </tr>

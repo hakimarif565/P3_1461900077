@@ -25,7 +25,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi_tambah0077');
+        return view('Transaksi_Tambah0077');
     }
 
     /**
@@ -41,7 +41,7 @@ class TransaksiController extends Controller
             'id_pelanggan' => $request-> id_pelanggan,
             'id_barang' => $request-> id_barang, 
         ]);
-        return redirect('transaksi0077');
+        return redirect('transaksi');
 
     }
 
@@ -65,7 +65,7 @@ class TransaksiController extends Controller
     public function edit($id)
     {
         $check = Transaksi::find($id);
-        return view('Transaksi_Edit0077', ['Transaksi' => $check]);
+        return view('Transaksi_Edit0077', ['transaksi' => $check]);
     }
 
     /**
@@ -82,7 +82,8 @@ class TransaksiController extends Controller
         $check->id_pelanggan = $request->id_pelanggan;
         $check->id_barang = $request->id_barang;
         $check->save();
-        return redirect('Transaksi0077');
+
+        return redirect('transaksi');
     }
 
     /**
